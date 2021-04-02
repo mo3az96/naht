@@ -817,18 +817,15 @@ html[dir="ltr"] .product .old-price {
 }
 
 .product .hidden-info {
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
-  -webkit-transform-origin: top;
-          transform-origin: top;
+  height: 0;
+  overflow: hidden;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 1199px) {
   .product .hidden-info {
-    -webkit-transform: none;
-            transform: none;
+    height: auto;
   }
 }
 
@@ -945,8 +942,7 @@ html[dir="ltr"] .product .add-to-cart span {
 }
 
 .product:hover .hidden-info {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
+  height: 134px;
 }
 
 @media (max-width: 991px) {
@@ -1184,6 +1180,7 @@ html[dir="ltr"] .header-setting.lang {
   font-size: 24px;
   color: var(--text-color);
   cursor: pointer;
+  display: none;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -1205,6 +1202,12 @@ html[dir="ltr"] .menu-icon {
 @media (max-width: 767px) {
   html[dir="ltr"] .menu-icon {
     margin-right: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .menu-icon {
+    display: block;
   }
 }
 

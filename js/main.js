@@ -28,7 +28,7 @@ $(document).ready(function () {
 
     ////////// ** Lattest Slider ** //////////
     var lattestswiper = new Swiper('.lattest-slider .swiper-container', {
-        loop: true,
+        // loop: true,
         pagination: {
             el: '.lattest-slider .swiper-pagination',
             clickable: true,
@@ -65,7 +65,7 @@ $(document).ready(function () {
 
     ////////// ** Bestseller Slider ** //////////
     var bestsellerswiper = new Swiper('.bestseller-slider .swiper-container', {
-        loop: true,
+        // loop: true,
         pagination: {
             el: '.bestseller-slider .swiper-pagination',
             clickable: true,
@@ -102,7 +102,7 @@ $(document).ready(function () {
 
     ////////// ** Offers Slider ** //////////
     var bestsellerswiper = new Swiper('.offers-slider .swiper-container', {
-        loop: true,
+        // loop: true,
         pagination: {
             el: '.offers-slider .swiper-pagination',
             clickable: true,
