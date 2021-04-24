@@ -135,6 +135,41 @@ $(document).ready(function () {
             },
         },
     });
+    ////////// ** related Slider ** //////////
+    var relatedswiper = new Swiper('.related-slider .swiper-container', {
+        // loop: true,
+        pagination: {
+            el: '.related-slider .swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.related-slider .swiper-btn-next',
+            prevEl: '.related-slider .swiper-btn-prev',
+        },
+        watchSlidesVisibility: true,
+        breakpoints: {
+            0: {
+                slidesPerView: 1.75,
+                spaceBetween: 10,
+            },
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+            767: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+            },
+            992: {
+                slidesPerView: 4,
+                spaceBetween: 0,
+            },
+            1200: {
+                slidesPerView: 5,
+                spaceBetween: 0,
+            },
+        },
+    });
     ////////// ** Arrow Top ** //////////
     $(".arrow-top").click(function () {
         $("html,body").animate({
@@ -180,4 +215,51 @@ $(document).ready(function () {
         }
         $(".cats-dropmenu>a").not(this).siblings().slideUp(500);
     })
+
+    /////////////////////////General
+    var galleryThumbs = new Swiper('.thumbs-imgs .swiper-container', {
+        spaceBetween: 7,
+        breakpoints: {
+            0: {
+                slidesPerView: 3,
+                loop: true,
+            },
+            992: {
+                slidesPerView: 4,
+            },
+            1200: {
+                direction: 'vertical',
+                slidesPerView: 4,
+            },
+        },
+        navigation: {
+            nextEl: '.thumbs-imgs .swiper-btn-next',
+            prevEl: '.thumbs-imgs .swiper-btn-prev',
+        },
+    });
+    var galleryTop = new Swiper('.main-imgs', {
+        spaceBetween: 10,
+        thumbs: {
+            swiper: galleryThumbs,
+        },
+    });
+
+    var minVal = parseInt($(".qty").attr("data-min"));
+    var maxVal = parseInt($(".qty").attr("data-max"));
+    $(".qty-control.plus").on('click', function () {
+        var $parentElm = $(this).parents(".qty-div");
+        var value = $parentElm.find(".qty").val();
+        if (value < maxVal) {
+            value++;
+        }
+        $parentElm.find(".qty").val(value);
+    });
+    $(".qty-control.minus").on('click', function () {
+        var $parentElm = $(this).parents(".qty-div");
+        var value = $parentElm.find(".qty").val();
+        if (value > minVal) {
+            value--;
+        }
+        $parentElm.find(".qty").val(value);
+    });
 });
