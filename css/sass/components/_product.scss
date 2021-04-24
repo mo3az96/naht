@@ -1,0 +1,215 @@
+.product-cont {
+    padding: 10px;
+    position: relative;
+    height: 309px;
+
+    @include md {
+        height: auto;
+    }
+
+    @include sm {
+        padding: 0;
+    }
+}
+
+.product {
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+
+    @include md {
+        position: relative;
+    }
+
+    .pro-img {
+        display: block;
+        width: 100%;
+        background-color: #fff;
+
+        img {
+            width: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+            img {
+                transform: scale(0.98);
+            }
+        }
+    }
+
+    .pro-info {
+        padding: 10px;
+    }
+
+    .name-here {
+        margin: 0 0 5px;
+        text-align: center;
+    }
+
+    .pro-name {
+        padding: 5px 0;
+        font-size: 14px;
+        font-weight: 300;
+        color: $text;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        transition: all 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            color: $main;
+            text-decoration: none;
+        }
+    }
+
+    .prices {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+
+        @include xs {
+            flex-direction: column;
+            height: 41px;
+            justify-content: flex-start;
+        }
+    }
+
+    .current-price {
+        color: $text;
+        font-weight: 700;
+    }
+
+    .old-price {
+        font-size: 15px;
+        text-decoration: line-through;
+        color: #909090;
+
+        @include rtl {
+            margin-right: 6px;
+
+            @include xs {
+                margin: 0;
+            }
+        }
+
+        @include ltr {
+            margin-left: 6px;
+
+            @include xs {
+                margin: 0;
+            }
+        }
+    }
+
+    .hidden-info {
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+
+        @include md {
+            height: auto;
+        }
+    }
+
+    .pro-desc {
+        font-size: 14px;
+        color: #606060;
+        line-height: 1.571;
+        text-align: center;
+        margin-bottom: 18px;
+        height: 84px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+
+        @include md {
+            -webkit-line-clamp: 2;
+            height: 45px;
+        }
+    }
+
+    .tools {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .add-to {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        background-color: #f3eeec;
+        border-radius: 50%;
+        font-size: 18px;
+        color: $text;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            background-color: $sec;
+            text-decoration: none;
+        }
+
+        @include xs {
+            display: none;
+        }
+    }
+
+    .add-to-cart {
+        width: 100%;
+        height: 32px;
+        margin: 0 4px;
+        background-color: $main;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        transition: all 0.3s ease-in-out;
+
+        span {
+            font-size: 18px;
+
+            @include rtl {
+                margin-left: 4px;
+            }
+
+            @include ltr {
+                margin-right: 4px;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            text-decoration: none;
+            background-color: $sec;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+
+        .hidden-info {
+            height: 134px;
+            @include md{
+                height: auto;
+            }
+        }
+
+        @include md {
+            box-shadow: none;
+        }
+    }
+}

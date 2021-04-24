@@ -1,0 +1,365 @@
+.top-head-cont {
+    background-color: $main;
+}
+
+.top-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hint-msg {
+    font-size: 13px;
+    color: #fff;
+
+    @include xs {
+        display: none;
+    }
+}
+
+.header-dropDown {
+    position: absolute;
+    top: 100%;
+    background-color: #fff;
+    min-width: 120px;
+    padding: 0 0;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+    z-index: 13;
+    visibility: hidden;
+    opacity: 0;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+
+    a {
+        white-space: nowrap;
+        font-size: 14px;
+        font-weight: 300;
+        padding: 0 22px;
+        line-height: 38px;
+        display: block;
+        color: $text;
+        cursor: pointer;
+        background-color: transparent;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: $main;
+            background-color: $back;
+            text-decoration: none;
+        }
+    }
+}
+
+.header-settings {
+    display: flex;
+    align-items: center;
+
+    @include xs {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+.header-setting {
+    position: relative;
+
+    .setting-anchor {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 36px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &::after {
+            font-family: 'Linearicons-Free';
+            content: "\e874";
+            font-size: 6px;
+
+            @include rtl {
+                margin-right: 3px;
+            }
+
+            @include ltr {
+                margin-left: 3px;
+            }
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+
+            html[dir='rtl'] & {
+                margin-left: 7px;
+            }
+
+            html[dir='ltr'] & {
+                margin-right: 7px;
+            }
+        }
+    }
+
+    .header-dropDown {
+        @include sm {
+            min-width: auto;
+            text-align: center;
+
+            a {
+                padding: 0 15px;
+            }
+        }
+
+        @include rtl {
+            right: -15px;
+
+            @include sm {
+                right: 50%;
+                transform: translateX(50%);
+            }
+        }
+
+        @include ltr {
+            left: -15px;
+
+            @include sm {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+
+    @media (min-width: 992px) {
+        &:hover {
+            .setting-anchor {
+                color: $sec;
+                text-decoration: none;
+            }
+
+            .header-dropDown {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    &.active {
+        .setting-anchor {
+            color: $sec;
+            text-decoration: none;
+        }
+
+        .header-dropDown {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &.lang {
+        @include rtl {
+            margin-right: 19px;
+        }
+
+        @include ltr {
+            margin-left: 19px;
+        }
+    }
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 14px 0 20px;
+
+    @include sm {
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.logo-cont {
+    display: flex;
+    align-items: center;
+}
+
+.menu-icon {
+    font-size: 24px;
+    color: $text;
+    cursor: pointer;
+    display: none;
+    transition: all 0.3s ease-in-out;
+
+    @include rtl {
+        margin-left: 20px;
+
+        @include xs {
+            margin-left: 15px;
+        }
+    }
+
+    @include ltr {
+        margin-right: 20px;
+
+        @include xs {
+            margin-right: 15px;
+        }
+    }
+
+    @include sm {
+        display: block;
+    }
+
+    &:hover,
+    &:focus {
+        color: $main;
+        text-decoration: none;
+    }
+}
+
+.logo {
+    width: 192px;
+    display: block;
+
+    @include sm {
+        width: 150px;
+    }
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.header-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: $text;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    .count {
+        position: absolute;
+        top: -8px;
+        right: -6px;
+        background-color: $main;
+        color: #fff;
+        font-weight: 500;
+        font-size: 11px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .price {
+        font-size: 14px;
+        font-weight: 300;
+
+        @include rtl {
+            margin-right: 5px;
+        }
+
+        @include ltr {
+            margin-left: 5px;
+        }
+
+        @include sm {
+            display: none;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        color: $main;
+        text-decoration: none;
+
+        .count {
+            animation: flip 0.7s ease-in-out;
+            background-color: $sec;
+        }
+    }
+
+    &.fav-icon {
+        @include xs {
+            display: none;
+        }
+    }
+}
+
+.header-icon-pos {
+    ~.header-icon-pos {
+        @include rtl {
+            margin-right: 20px;
+
+            @include xs {
+                margin-right: 15px;
+            }
+        }
+
+        @include ltr {
+            margin-left: 20px;
+
+            @include xs {
+                margin-left: 15px;
+            }
+        }
+    }
+}
+
+.user-cont {
+    position: relative;
+    padding: 5px 0;
+
+    .header-dropDown {
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include xs {
+            min-width: auto;
+            text-align: center;
+
+            a {
+                padding: 0 15px;
+            }
+        }
+    }
+
+
+    @media (min-width: 992px) {
+        &:hover {
+            .user-icon {
+                color: $main;
+                text-decoration: none;
+            }
+
+            .header-dropDown {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    &.active {
+        .user-icon {
+            color: $main;
+            text-decoration: none;
+        }
+
+        .header-dropDown {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    >li {
+        margin: 0 13px;
+        position: relative;
+
+        >a {
+            display: flex;
+            align-items: center;
+            line-height: 54px;
+            font-size: 16px;
+            color: $text;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out;
+
+            &:hover,
+            &:focus {
+                color: $main;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .cats-dropmenu {
+        >a {
+            &::after {
+                font-family: 'Linearicons-Free';
+                content: "\e874";
+                font-size: 8px;
+
+                @include rtl {
+                    margin-right: 5px;
+                }
+
+                @include ltr {
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .header-dropDown {
+            width: 172px;
+
+            @include rtl {
+                right: -22px;
+            }
+
+            @include ltr {
+                left: -22px;
+            }
+        }
+
+        &:hover {
+            >a {
+                color: $main;
+                text-decoration: none;
+            }
+
+            .header-dropDown {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,247 @@
+footer {
+    margin-top: 45px;
+    margin-bottom: 48px;
+
+    @include sm {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+.footer-about {
+    .footer-logo {
+        width: 192px;
+        margin-bottom: 18px;
+
+        @include sm {
+            text-align: center;
+            margin: 0 auto 15px;
+        }
+    }
+
+    @include rtl {
+        padding-left: 20px;
+
+        @include sm {
+            padding: 0;
+        }
+    }
+
+    @include ltr {
+        padding-right: 20px;
+
+        @include sm {
+            padding: 0;
+        }
+    }
+
+    @include sm {
+        margin-bottom: 40px;
+    }
+}
+
+.footer-head {
+    font-size: 17px;
+    color: $text;
+    font-weight: 700;
+    margin: 23px 0 20px;
+
+    @include sm {
+        margin-top: 0;
+    }
+}
+
+
+.footer-social {
+    @include sm {
+        margin-top: 30px;
+    }
+}
+
+.social-head {
+    @include sm {
+        text-align: center;
+        margin: 0 0 23px;
+    }
+}
+
+.footer-desc {
+    font-size: 15px;
+    line-height: 1.733;
+    margin: 0;
+    font-weight: 300;
+    color: $text;
+
+    @include sm {
+        text-align: justify;
+        text-align-last: center;
+    }
+}
+
+.footer-list {
+    margin: 0;
+
+    >li {
+        margin-bottom: 9px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        >a {
+            font-size: 15px;
+            font-weight: 300;
+            color: $text;
+            display: inline-block;
+            transition: all 0.3s ease-in-out;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+                transform: translateX(-5px);
+                color: $main;
+
+                html[dir='ltr'] & {
+                    transform: translateX(5px);
+                }
+            }
+        }
+    }
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+
+    @include sm {
+        justify-content: center;
+    }
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3eeec;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: $text;
+    font-size: 18px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+        color: #fff;
+        background-color: $main;
+        border-color: $main;
+        text-decoration: none;
+    }
+
+    i {
+        &.fa-facebook {
+            &::before {
+                content: "\f39e";
+            }
+        }
+
+        &.fa-pinterest {
+            &::before {
+                content: "\f231";
+            }
+        }
+
+        &.fa-telegram {
+            &::before {
+                content: "\f3fe";
+            }
+        }
+    }
+
+    ~.social {
+        @include rtl {
+            margin-right: 8px;
+        }
+
+        @include ltr {
+            margin-left: 8px;
+        }
+    }
+}
+
+.maroof {
+    text-align: center;
+    margin: 40px auto 19px;
+
+    @include sm {
+        margin-top: 43px;
+    }
+}
+
+.copyrights {
+    font-size: 15px;
+    font-weight: 300;
+    color: $text;
+    margin: 0 0 15px;
+    text-align: center;
+
+    @include sm {
+        margin: 0 0 20px;
+    }
+}
+
+.pay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-top {
+    position: fixed;
+    bottom: 110px;
+    z-index: 12;
+    display: none;
+
+    @include sm {
+        bottom: 0px;
+    }
+
+    html[dir='rtl'] & {
+        right: 20px;
+
+        @include sm {
+            right: 0px;
+        }
+    }
+
+    html[dir='ltr'] & {
+        left: 20px;
+
+        @include sm {
+            left: 0px;
+        }
+    }
+
+    span {
+        font-size: 20px;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: $main;
+        transition: all 0.3s ease-in-out;
+        border-radius: 50%;
+
+        &:hover {
+            background-color: $sec;
+        }
+
+        @include sm {
+            border-radius: 0;
+            opacity: 0.7;
+        }
+    }
+}

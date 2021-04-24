@@ -1,0 +1,87 @@
+.search-icon {
+    &.active {
+        transform: scaleX(-1);
+
+        span {
+            &::before {
+                content: "\e870";
+            }
+        }
+    }
+}
+
+.search-cont {
+    position: absolute;
+    top: 100%;
+    display: none;
+    z-index: 12;
+
+    @include rtl {
+        left: 00;
+    }
+
+    @include ltr {
+        right: 0
+    }
+}
+
+.search-form {
+    position: relative;
+    width: 500px;
+    margin: auto;
+
+    @include xs {
+        width: calc(100vw - 30px);
+    }
+}
+
+.search-input {
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    padding: 0 22px;
+    font-size: 17px;
+    color: $text;
+    font-weight: 500;
+
+    &::placeholder {
+        color: #999999;
+        font-weight: 400;
+    }
+
+    @include rtl {
+        padding-left: 130px;
+    }
+
+    @include ltr {
+        padding-right: 130px;
+    }
+}
+
+.search-button {
+    position: absolute;
+    top: 5px;
+    width: 112px;
+    height: 40px;
+    background-color: $main;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+
+    @include rtl {
+        left: 5px;
+    }
+
+    @include ltr {
+        right: 5px;
+    }
+
+    &:hover {
+        background-color: $sec;
+    }
+}

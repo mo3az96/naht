@@ -1,0 +1,73 @@
+.form-group {
+    &.required {
+        label {
+            &::after {
+                content: "*";
+                color: #ff0000;
+            }
+        }
+    }
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 6px;
+}
+
+.select-cont {
+    position: relative;
+
+    &::after {
+        font-family: 'Linearicons-Free';
+        content: "\e874";
+        font-size: 12px;
+        color: #989898;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        html[dir='ltr'] & {
+            right: 18px;
+        }
+
+        html[dir='rtl'] & {
+            left: 18px;
+        }
+    }
+}
+
+.form-control {
+    height: 44px;
+    border-radius: 22px;
+    width: 100%;
+    background-color: #f5f5f5;
+    border: 2px solid transparent;
+    outline: none;
+    box-shadow: none;
+    appearance: none;
+    color: $text;
+    font-size: 14px;
+    padding: 0 25px;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+        border-color: $main;
+        outline: none;
+        box-shadow: none;
+    }
+
+    &:placeholder {
+        color: #a9a9a9;
+    }
+}
+
+select {
+    &.form-control {
+        color: #a9a9a9;
+
+        &:focus {
+            border-color: transparent;
+        }
+    }
+}
